@@ -27,4 +27,4 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     }),
   ],
 })
-export class SqlModule {}
+export class SqlModule { }
