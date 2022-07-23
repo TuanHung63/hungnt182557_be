@@ -134,7 +134,6 @@ export class AuthService {
       );
       return { status: 200, ...tokens };
     } catch (err) {
-      console.log(err);
       throw new ConflictException(
         `${MSG.FRONTEND.EMAIL_DUPLICATED} or ${MSG.FRONTEND.USERNAME_DUPLICATED}`,
       );

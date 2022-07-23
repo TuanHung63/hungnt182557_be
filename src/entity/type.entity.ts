@@ -20,7 +20,7 @@ export class Types {
   @Column()
   id: string;
 
-  @Column({ unique: true })
+  @Column({ unique: true, length: 30 })
   name: string;
 
   @Column()

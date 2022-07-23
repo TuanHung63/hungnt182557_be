@@ -32,7 +32,6 @@ const sendMail = async (email: string, otp: string) => {
     await transporter.sendMail(mailOptions);
     return `OTP has been send to ${encodeEmail(email)}`;
   } catch (e) {
-    console.log(e);
   }
 };
 

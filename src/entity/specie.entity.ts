@@ -39,7 +39,7 @@ export class Specie {
     this.pets.push(pet);
   }
 
-  @Column({ unique: true })
+  @Column({ unique: true, length: 30 })
   name: string;
 
   @Column()

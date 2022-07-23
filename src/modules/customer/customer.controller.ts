@@ -23,8 +23,6 @@ export class CustomerController {
   @ApiOkResponse({ type: CustomerResponseDTO })
   @Post('')
   async registerCustomer(@Body() customerDTO: CustomerDTO) {
-    console.log(customerDTO);
-
     return await this.customerService.registerCustomer(customerDTO);
   }
 

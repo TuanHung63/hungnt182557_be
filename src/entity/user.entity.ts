@@ -20,7 +20,7 @@ export class User {
   @Column()
   id: string;
 
-  @Column({ unique: true })
+  @Column({ unique: true, length: 20 })
   userName: string;
 
   @Column()
@@ -33,7 +33,7 @@ export class User {
   @Column()
   dob: Date;
 
-  @Column({ unique: true })
+  @Column({ unique: true, length: 50 })
   email: string;
 
   @Column()
