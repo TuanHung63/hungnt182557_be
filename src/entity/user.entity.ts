@@ -39,7 +39,7 @@ export class User {
   @Column()
   phoneNumber: string;
 
-  @Column()
+  @Column({ type: 'longtext' })
   avatarUrl: string;
 
   @Column()
