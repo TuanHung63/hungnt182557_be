@@ -32,6 +32,7 @@ export class signUpDTO {
   phoneNumber: string;
 
   @ApiProperty()
+  @IsOptional()
   avatarUrl: string;
 
   @ApiProperty()
