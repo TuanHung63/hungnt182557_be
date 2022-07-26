@@ -18,7 +18,7 @@ export class TypesService {
 
     const data = await this.typeRepo.findAndCount({
       where: {
-        name: Like('%' + keyword + '%') || getQuery.name,
+        name: Like('%' + keyword.trim() + '%') || getQuery.name,
         id: getQuery.id,
         isChecked: getQuery.isChecked,
       },

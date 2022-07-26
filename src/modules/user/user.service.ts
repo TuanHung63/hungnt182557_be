@@ -36,7 +36,7 @@ export class UserService {
 
     const data = await this.userRepo.findAndCount({
       where: {
-        name: Like('%' + keyword + '%') || getQuery.name,
+        name: Like('%' + keyword.trim() + '%') || getQuery.name,
         id: getQuery.id,
         role: getQuery.role    //doctor role    
 

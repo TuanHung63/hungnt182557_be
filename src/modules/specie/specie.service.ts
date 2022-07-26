@@ -21,7 +21,7 @@ export class SpecieService {
 
     const data = await this.specieRepo.findAndCount({
       where: {
-        name: Like('%' + keyword + '%') || getSpeciesQuery.name,
+        name: Like('%' + keyword.trim() + '%') || getSpeciesQuery.name,
         id: getSpeciesQuery.id,
         isChecked: getSpeciesQuery.isChecked
 

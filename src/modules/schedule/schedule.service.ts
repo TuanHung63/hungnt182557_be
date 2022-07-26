@@ -6,7 +6,7 @@ import { STATUS_SCHEDULE } from 'src/config/constant';
 import { Pet } from 'src/entity/pet.entity';
 import { Schedule } from 'src/entity/schedule.entity';
 import { User } from 'src/entity/user.entity';
-import { Repository } from 'typeorm';
+import { Like, Repository } from 'typeorm';
 import { getScheduleDTO, ScheduleDTO, updateScheduleDTO } from './dto/schedule.dto';
 
 @Injectable()
@@ -28,8 +28,8 @@ export class ScheduleService {
     const data = await this.scheduleRepo.findAndCount({
 
       where: {
-        // name: Like('%' + keyword + '%') || getScheduleQuery.date,
-        id: getScheduleQuery.id,
+        // name: Like('%' + keyword.trim() + '%') || getScheduleQuery.date,
+        id: getScheduleQuery.id || Like('%' + keyword.trim() + '%'),
         // idUser: getScheduleQuery.idUser
       },
       // order: { name: getScheduleQuery.sortBy ? 'DESC' : 'ASC' },
